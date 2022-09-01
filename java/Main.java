@@ -135,7 +135,6 @@ public class Main {
         for (int i = 0; i < nums.size(); i++) {
             sort.put(norms.get(i), nums.get(i));
         }
-
         return sort;
     }
 }
