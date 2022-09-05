@@ -1,4 +1,4 @@
-
+from math import sqrt
 # Asks the user for two positive integers 
 # and returns the 10 happy numbers between them 
 # with the greatest norms, sorted descending by the norms
@@ -51,7 +51,7 @@ def findNorms(list):
         for k in past:
             k = k*k
             norm += k
-        dictionary[num] = norm
+        dictionary[num] = sqrt(norm)
     sortedDict = dict(sorted(dictionary.items(), key=lambda item:item[1], 
     reverse=True))
     return sortedDict
@@ -68,7 +68,7 @@ if len(nums) == 0:
     print("NOBODYS HAPPY")
     exit()
 dict = findNorms(nums)
-
+print(dict.values())
 output = dict.keys()
 
 count = 0
