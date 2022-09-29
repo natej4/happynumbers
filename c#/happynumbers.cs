@@ -35,7 +35,7 @@ public class happynumbers{
             Console.WriteLine(kvp.Value);
         }
     }
-
+// fills a list with numbers between entered values
     static List<int> fillArray(int x, int y) {
         List<int> list = new List<int>();
         int[] array = {};
@@ -51,7 +51,7 @@ public class happynumbers{
         }
         return list;
     }
-
+//returns a list with numbers who are not happy removed
     static List<int> filterArray(List<int> nums){
         List<int> filtered = new List<int>();
         foreach(int i in nums){
@@ -61,7 +61,7 @@ public class happynumbers{
         }
         return filtered;
     }
-    
+//determines whether a number is happy
     public static bool ishappy(int n){
             List<int> cache = new List<int>();
             int sum = 0;
@@ -81,9 +81,12 @@ public class happynumbers{
            return true;            
         }
 
+//finds the norm of each happy number, sorts a dictionary based on the norm
+//then returns that dictionary
     static SortedDictionary<double, int> findNorms(List<int> nums){
         SortedDictionary<double, int> dict = new SortedDictionary<double, int>();
         List<int> cache = new List<int>();
+        //calculating norm
         foreach (int i in nums){
             cache.Clear();
             double norm = 0.0;
@@ -108,11 +111,12 @@ public class happynumbers{
                 norm += y;
             }
             norm = Math.Sqrt(norm);
-            
+        //add number and its norm to dictionary
             dict.Add(-norm, i);
 
             
         }
+        //truncates the dictionary at the top 10 values
         SortedDictionary<double, int> outputDict = new SortedDictionary<double, int>();
         for (int i = 0; i < dict.Count; i++){
             if (i < 10){

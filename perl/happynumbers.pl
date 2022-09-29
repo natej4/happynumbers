@@ -4,6 +4,10 @@ use strict;
 use warnings;
 use List::Util qw(sum);
 
+my $x;
+my $y;
+my @nums;
+
 sub is_happy {
     my ($n) = @_;
     my %seen;
@@ -15,12 +19,12 @@ sub is_happy {
 }
 
 sub fillArray {
-    if (my $x > my $y){
+    if ($x > $y){
         my $n = $x;
         $x = $y;
         $y = $n;
     }
-    my @list = (my $x.. my $y);
+    my @list = ($x..$y);
     # my 
     # for ($i = my $x; $i < my $y; $i++) {
     #     push(@list, i);
@@ -28,13 +32,28 @@ sub fillArray {
     return @list;
 }
 
+sub filter {
+    my @list = ();
+    foreach my $i (@nums){
+        if (is_happy($i)){
+            # print "$i\n";
+            push(my @list, $i);
+            print scalar @list,"\n";
+        }
+    }
+    return my @list;
+}
+
 print "First argument: ";
-my $x = <>;
+$x = <>;
 print "Second argument: ";
-my $y = <>;
+$y = <>;
 
 if ($x == $y){
     print "NOBODYS HAPPY\n";
 }
 
-print(fillArray($x, $y));
+@nums = fillArray($x, $y);
+print "@nums";
+my @filtered = filter(@nums);
+# print "@filtered";
