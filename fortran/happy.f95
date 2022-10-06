@@ -1,7 +1,7 @@
 program happy
     implicit none
 
-    integer :: x,y,n
+    integer :: x,y,n,size,numsize
     integer, dimension(:), allocatable :: nums
     print *,'Enter first argument: '
     read *, x
@@ -13,11 +13,18 @@ program happy
         return
     end if
 
-    allocate(nums(y))
+    if (x > y) then
+        n = x
+        x = y
+        y = n
+    endif
+    size = y-x+1
+    allocate(nums(size))
     call createArray(nums, x, y)
-    do n = 1,y
+    ! numsize = size(nums)
+    do n = 1, size
         print *, nums(n)
-    end do
+    enddo
     ! print *, sizeof(nums)
 
     deallocate (nums)
@@ -30,10 +37,14 @@ subroutine createArray(nums, x, y)
     integer :: x,y,count = 1,n
     integer, dimension(x-y), intent(out) :: nums
 
+    
+
     do n = x,y
         nums(count) = n
         count = count + 1
     end do
+
+    nums = nums(1:y)
 
 
 end subroutine createArray

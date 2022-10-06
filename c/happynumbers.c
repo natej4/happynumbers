@@ -5,6 +5,13 @@
 enum { h_unknown = 0, h_yes, h_no };
 unsigned char buf[CACHE] = {0, h_yes, 0};
 
+struct happynumbers
+{
+	int happys[];
+	int norms[];
+};
+
+
 int isHappy(int);
 int* fillArray(int,int);
 
