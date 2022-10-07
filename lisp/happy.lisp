@@ -1,8 +1,8 @@
 #!/usr/bin/sbcl --script
 
-(defun createArray(x y)
-(let ((size 0)(c 0)(nums))
-(setq size (- y x))
+(defun createArray(x y size)
+(let ((c 0)(nums))
+;; (setq size (- y x))
 ;; (setq nums '())
 (setq nums (make-array '(size)))
 (loop for a from x to y do(
@@ -20,13 +20,15 @@ nums
     (defvar x)
     (defvar y)
     (defvar nums)
+    (defvar size)
     (princ "Enter first argument: ")
     (terpri)
     (setq x (read))
     (princ "Enter second argument: ")
     (terpri)
     (setq y (read))
-    (setq nums (createArray x y))
+    (setq size (- y x))
+    (setq nums (createArray x y size))
     ;; (print-elements-of-list nums)
     ;;(dolist (n (createArray x y))
 
