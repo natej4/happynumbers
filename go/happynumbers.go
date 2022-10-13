@@ -125,7 +125,6 @@ func norm(num int) float64 {
 
 //contains method for slice/array
 func contains(sl []int, name int) bool {
-	// fmt.Println("here")
 	for _, value := range sl {
 		if value == name {
 			return true
