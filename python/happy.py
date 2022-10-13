@@ -68,7 +68,6 @@ if len(nums) == 0:
     print("NOBODYS HAPPY")
     exit()
 dict = findNorms(nums)
-print(dict.values())
 output = dict.keys()
 
 count = 0

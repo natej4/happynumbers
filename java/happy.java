@@ -9,10 +9,10 @@ import java.util.function.BiConsumer;
  * 
  * by Nate Jackson for CSC330
  */
-public class Main {
+public class happy {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Main obj = new Main();
+        happy obj = new happy();
         List<Integer> nums = new ArrayList<Integer>();
         List<Double> norms = new ArrayList<Double>();
         Map<Double, Integer> map = new TreeMap<Double, Integer>();
