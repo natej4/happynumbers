@@ -142,7 +142,7 @@ void swap(int *xp, int *yp){
 	*xp = *yp;
 	*yp = temp;
 }
-
+//modified swap() to take doubles
 void doubleSwap(double *xp, double *yp){
 	double temp = *xp;
 	*xp = *yp;
@@ -158,7 +158,7 @@ void bubbleSort(int arr[], int n){
 			if (arr[j] > arr[j+1]) swap(&arr[j], &arr[j+1]);
 }
 
-//same as bubbleSort, but sorts the happies array
+//same as bubbleSort(), but sorts the happies array
 //in tandem with the argument norm array
 void normBubbleSort(double arr[], int n){
 	int i, j;
